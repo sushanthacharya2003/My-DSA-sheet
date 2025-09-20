@@ -58,7 +58,7 @@ We need to find the largest string X that divides both str1 and str2.
 
 If no such string exists, return an empty string.
 
-Example:
+Ex:
 
 str1 = "ABABAB", str2 = "ABAB"
 Output: "AB"
