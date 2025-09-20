@@ -1,18 +1,24 @@
 """
 PROBLEM 202: Happy Number
-============================
-Given a number n, repeatedly replace n with the sum of the squares of its digits until n becomes 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Return true if n ends in 1, and false if it loops endlessly.
+========================
+Given a number n, repeatedly replace n with the sum
+of the squares of its digits until n becomes 1 (where
+it will stay), or it loops endlessly in a cycle that
+does not include 1. Return true if n ends in 1, and
+false if it loops endlessly.
+
 Example 1:
 Input: n = 19
 Output: true
-Explanation: 1^2 + 9^2 = 82
-8^2 + 2^2 = 68
-6^2 + 8^2 = 100
-1^2 + 0^2 + 0^2 = 1
+Explanation:
+    1^2 + 9^2 = 82
+    8^2 + 2^2 = 68
+    6^2 + 8^2 = 100
+    1^2 + 0^2 + 0^2 = 1
+
 Example 2:
 Input: n = 2
 Output: false
-
 """
 class Solution:
     def sum_of_squares(self,n): 
@@ -93,7 +99,9 @@ LeetCodee
 
 Q: Can you define a happy number?
 A:
-A happy number is a positive integer that eventually reaches 1 when you repeatedly replace the number with the sum of the squares of its digits. If it falls into a cycle that does not include 1, the number is not happy.
+A happy number is a positive integer that eventually reaches 1 when you 
+repeatedly replace the number with the sum of the squares of its digits. If it falls into a cycle that does 
+not include 1, the number is not happy.
 
 Example: 19 → 82 → 68 → 100 → 1 → Happy.
 
