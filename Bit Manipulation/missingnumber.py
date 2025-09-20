@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 # Time Complexity: O(n)
 # Space Complexity: O(1)
-
+#APPROACH: Using XOR (Bit Manipulation)
 """
 ============================
 DSA INTERVIEW QUESTIONS ON 'MISSING NUMBER'
