@@ -1,0 +1,137 @@
+"""
+1071. Greatest Common Divisor of Strings
+Solved
+Easy
+Topics
+premium lock icon
+Companies
+Hint
+For two strings s and t, we say "t divides s" if and only if s = t + t + t + ... + t + t (i.e., t is concatenated with itself one or more times).
+
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+ 
+
+Example 1:
+
+Input: str1 = "ABCABC", str2 = "ABC"
+Output: "ABC"
+Example 2:
+
+Input: str1 = "ABABAB", str2 = "ABAB"
+Output: "AB"
+Example 3:
+
+Input: str1 = "LEET", str2 = "CODE"
+Output: ""
+ """
+class Solution:
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        if str1+str2!=str2+str1:
+            return ""
+        else:
+            gcd_len=math.gcd(len(str1),len(str2))
+        return str1[:gcd_len]
+    
+# Time Complexity: O(n + m) where n and m are lengths of str1 and str2
+# Space Complexity: O(1)
+# Approach: Mathematical GCD and String Concatenation Check
+# Inbuilt input example
+if __name__ == "__main__":
+    str1 = "ABCABC"  # You can change this input for other test cases
+    str2 = "ABC"
+    sol = Solution()
+    print(sol.gcdOfStrings(str1, str2))
+#output: ABC
+
+"""
+1️⃣ What is the problem about?
+
+Q: Explain the “GCD of Strings” problem.
+A:
+
+You are given two strings str1 and str2.
+
+A string X is said to divide str1 if repeating X some number of times equals str1.
+
+We need to find the largest string X that divides both str1 and str2.
+
+If no such string exists, return an empty string.
+
+Example:
+
+str1 = "ABABAB", str2 = "ABAB"
+Output: "AB"
+
+2️⃣ What’s the intuition behind the solution?
+
+Q: How do you approach this problem efficiently?
+A:
+
+Concatenation check:
+
+If str1 + str2 != str2 + str1, no common repeating pattern exists → return "".
+
+Reason: If a common pattern exists, concatenating in any order should yield the same string.
+
+GCD of lengths:
+
+Once the pattern exists, the length of the GCD string is gcd(len(str1), len(str2)).
+
+Slice str1[:gcd_len] → this is the largest common divisor string.
+
+Math connection:
+
+This is analogous to numeric GCD: repeating string patterns behave like repeated numbers.
+
+3️⃣ Time and Space Complexity
+
+Q: What’s the time and space complexity?
+A:
+
+Time: O(n + m) → due to string concatenation and comparison (n = len(str1), m = len(str2))
+
+Space: O(n + m) → because concatenated strings are created in memory
+
+(Follow-up: Could reduce space using iteration instead of concatenation.)
+
+4️⃣ Follow-up/Variant Questions
+
+Q1: How would you solve this without extra space?
+A1:
+
+Instead of creating str1 + str2 and str2 + str1, iterate and check if str1 is composed of str2’s pattern and vice versa.
+
+Only O(1) extra space is used.
+
+Q2: Can you explain why gcd(len(str1), len(str2)) works?
+A2:
+
+Let the repeated string be X.
+
+If str1 = X^a and str2 = X^b (^ means repeat), then the length of X divides both lengths.
+
+Hence, len(X) = gcd(len(str1), len(str2)).
+
+Q3: Could this be generalized for more than two strings?
+A3:
+
+Yes, you can iteratively compute the GCD of lengths of all strings and check concatenation compatibility.
+
+Useful when dealing with multiple strings in pattern matching problems.
+
+Q4: What kind of DSA concepts does this problem test?
+A4:
+
+String manipulation: Checking repeating patterns
+
+Mathematical insight: Using gcd for string length
+
+Time-space optimization: Recognizing concatenation can be expensive
+
+Problem-solving mindset: Translating numeric GCD concept to strings
+
+If you want, I can create a ready-to-use “interview answer script” for this problem — 2–3 concise paragraphs you could speak out in a 3–5 minute interview answer. It usually impresses interviewers because it’s clear and structured.
+
+Do you want me to do that? 
+"""
