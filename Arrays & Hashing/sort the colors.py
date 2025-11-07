@@ -28,7 +28,6 @@
 # Follow up: Could you come up with a one-pass
 # algorithm using only constant extra space?
 
-
 """
 Optimal Solution: Dutch National Flag
 Algorithm
@@ -54,7 +53,6 @@ Time Complexity: O(n) (single pass)
 Space Complexity: O(1) (in-place)
 """
 
-
 def sortColors(nums):
     """Sorts the array in-place using Dutch
     National Flag algorithm."""
@@ -69,7 +67,6 @@ def sortColors(nums):
         else:  # nums[mid] == 2
             nums[mid], nums[high] = nums[high], nums[mid]
             high -= 1
-
 
 # Inbuilt test case
 if __name__ == "__main__":
@@ -187,3 +184,4 @@ If you want, I can make a **full 15–20 Q\&A set** covering **every tricky foll
 Do you want me to do that?
 
 """
+
