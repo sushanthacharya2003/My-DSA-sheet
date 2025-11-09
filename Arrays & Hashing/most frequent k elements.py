@@ -75,3 +75,37 @@ class Solution:
         return result
 #time complexity: O(N log k)
 #space complexity: O(N)
+
+
+
+"""
+1: Why use a heap instead of sorting the entire array for Top K Frequent Elements?
+A1 (Key Insight):
+
+"Sorting would take O(n log n) time, but a min-heap of size k lets us maintain only the top k elements in O(n log k) time. For large n and small k (e.g., k=10), this is significantly faster. Example: If k=10 and n=1M, we avoid sorting 1M elements."
+Why it matters: Shows you optimize for real-world constraints (k is usually small).
+
+Q2: How would you handle ties in frequency (e.g., two elements with same count)?
+A2 (Critical Detail):
+
+"The problem doesn’t specify tie-breaking rules, so I’d clarify with the interviewer. In practice, we’d use the element itself as a secondary sort key (e.g., lexicographical order) to ensure deterministic output. For example, if freq(3)=freq(5)=2, return [3,5] or [5,3] based on the problem’s expected behavior."
+Why it matters: Tests your attention to edge cases and communication skills.
+
+Q3: What if k = n (all elements are top k)?
+A3 (Edge Case Analysis):
+
+"If k = n, the solution reduces to returning all elements. Using a heap would be inefficient (O(n log n)), so we’d skip the heap and just return all keys from the frequency map. This is a good spot to mention: 'We should check for trivial cases early to optimize runtime.'"
+Why it matters: Proves you think beyond the "standard" solution.
+
+Q4: How does the bucket sort approach work here, and when is it better than a heap?
+A4 (Alternative Solution Insight):
+
+"Bucket sort uses an array where index = frequency. We place each element in the bucket at its frequency index. Then we iterate from highest frequency down to 1 to collect top k elements. This is O(n) time (no sorting/heap), but uses O(n) extra space. It’s ideal when frequencies are small (e.g., k << n) or when n is known to be manageable."
+Why it matters: Shows you know multiple approaches and their trade-offs.
+
+Why these questions?
+Q1 separates candidates who understand complexity beyond "heap is faster."
+Q2 reveals if you handle ambiguity (a real interview skill).
+Q3 tests edge-case awareness.
+Q4 proves you can compare algorithms, not just implement one.
+"""
