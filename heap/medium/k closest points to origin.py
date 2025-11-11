@@ -96,6 +96,18 @@ Here’s a structured approach in 3 points (since you asked for side-points with
         return result
 
 
+#solution 2
+
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        # Sort points by their squared distance from origin
+        points.sort(key=lambda p: p[0] * p[0] + p[1] * p[1])
+        
+        # Return the first k points
+        return points[:k]
+
+
+
 ## ✅ Complexity
 
 * **Time Complexity**:
