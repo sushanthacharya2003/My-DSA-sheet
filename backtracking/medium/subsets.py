@@ -124,6 +124,17 @@ class Solution:
         backtrack(0)
         return result
 ```
+backtrack(0)
+  |
+  |-- EXCLUDE 1 → backtrack(1)
+  |       |
+  |       |-- EXCLUDE 2 → backtrack(2)
+  |       |-- INCLUDE 2 → backtrack(2)
+  |
+  |-- INCLUDE 1 → backtrack(1)
+          |
+          |-- EXCLUDE 2 → backtrack(2)
+          |-- INCLUDE 2 → backtrack(2)
 
 ---
 
