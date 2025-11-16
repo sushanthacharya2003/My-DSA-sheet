@@ -136,6 +136,15 @@ Answer = res × 2^(len(nums) - 1)
 
 ---
 
+🧠 INTUITION (Sush Edition)
+
+OR grabs all bits that CAN occur in XOR.
+
+Each bit contributes to half the subsets.
+
+Multiply OR_value by 2^(n−1).
+Done.
+
 # ✅ **Final Code (Optimized O(n))**
 
 ```python
